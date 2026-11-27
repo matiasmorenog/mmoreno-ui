@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src",
+    ".storybook",
+    "visual-regression",
+    "tsup.config.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts",
+    "playwright.visual.config.ts"
+  ],
+  "exclude": ["dist", "storybook-static", "node_modules"]
+}
