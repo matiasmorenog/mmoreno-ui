@@ -1,0 +1,54 @@
+/*
+  Tokens de @mmoreno/ui.
+  El consumidor los pisa en su CSS o con <ThemeProvider theme={...} />.
+
+    @import "tailwindcss";
+    @source "../node_modules/@mmoreno/ui/dist";
+    @import "@mmoreno/ui/theme.css";
+*/
+
+:root {
+  --ui-color-primary: #3d5a80;
+  --ui-color-on-primary: #ffffff;
+  --ui-color-soft: #e7eef5;
+  --ui-color-surface: #ffffff;
+  --ui-color-foreground: #1c2430;
+  --ui-color-border: #c5ced8;
+  --ui-color-focus: #3d5a80;
+  --ui-color-danger: #b42318;
+  --ui-color-danger-soft: #fdecea;
+  --ui-radius: 0.5rem;
+  --ui-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+  --ui-weight: 500;
+  --ui-duration: 150ms;
+  --ui-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ui-hover: 0.96;
+  --ui-press: 0.9;
+  --ui-focus-width: 2px;
+  --ui-focus-offset: 2px;
+  --ui-switch-width: 2.5rem;
+  --ui-switch-height: 1.375rem;
+  --ui-switch-thumb: 1.125rem;
+  --ui-switch-travel: 1.125rem;
+}
+
+.ui-canvas {
+  color: var(--ui-color-foreground);
+  background-color: var(--ui-color-surface);
+}
+
+[data-ui-root],
+.ui-switch-thumb {
+  transition-property: color, background-color, border-color, box-shadow, filter, transform;
+  transition-duration: var(--ui-duration, 150ms);
+  transition-timing-function: var(--ui-ease, ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-ui-root],
+  [data-ui-root] :where(button, input, .ui-switch-thumb),
+  .ui-switch-thumb {
+    transition-duration: 0.01ms;
+    animation-duration: 0.01ms;
+  }
+}
